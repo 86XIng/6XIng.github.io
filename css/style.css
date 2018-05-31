@@ -18,32 +18,21 @@ p {
 .button-collapse {
   color: #26a69a;
 }
-/*.card {
-	width:700px;
+.card {
+	/*width:700px;*/
 	height:150px;
 	overflow:hidden;
 	margin:auto;
 	position:relative;
 }
-@keyframes anis {
-	100% {
-	transform:translateY(-200px)
-}}img {
-	position:absolute;
-}*/
-#scroll {
-	animation:anis 10s linear infinite;
-	font-size: 25px;
-}
-#scroll:hover {
-	animation-play-state:paused;
-}
+
+
 .container:first-child {
 	position: relative;
 }
 
 .parallax-container1 {
-  min-height: 600px !important;
+  min-height: 0px !important;
   line-height: 0;
   height: auto;
 }
@@ -60,7 +49,6 @@ p {
 
 @media only screen and (max-width : 992px) {
   .parallax-container .section {
-    position: absolute;
     top: 40%;
   }
   #index-banner .section {
