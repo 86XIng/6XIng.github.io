@@ -18,8 +18,8 @@ p {
 .button-collapse {
   color: #26a69a;
 }
-.card {
-	/*width:700px;*/
+/*.card {
+	width:700px;
 	height:150px;
 	overflow:hidden;
 	margin:auto;
@@ -30,7 +30,7 @@ p {
 	transform:translateY(-200px)
 }}img {
 	position:absolute;
-}
+}*/
 #scroll {
 	animation:anis 10s linear infinite;
 	font-size: 25px;
