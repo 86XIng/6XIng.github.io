@@ -1,1 +1,2 @@
-# 6XIng.github.io
+# This the first time I meet up with GitHub
+Why I made this is because two girls came to me on one weekend afternoon for the China data competition. In this small university, the number of people who have the ability to make a website are very little. When they came to me , I just had learnt HTML and CSS for a while, most importantly I don't know how to release a website even a static one. Without any code production experience
