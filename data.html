@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+   <head>
+       <meta charset="utf-8">
+   </head>
+   <body style="height: 100%; margin: 0">
+       <div id="container" style="height: 100%"></div>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
+       <script type="text/javascript">
+var dom = document.getElementById("container");
+var myChart = echarts.init(dom);
+var app = {};
+option = null;
+let arr=[];
+        for(let i=0.5;i<20;i++){
+            arr.push(i);
+            for(let j=1;j<10;j++){
+                arr.push(i+0.1*j);
+            }
+            
+        }
+        // let result1 = {};
+        // result1.buy=[];
+        // let result2 = {};
+        // result1.sell=[];
+        var result = [];
+        arr.forEach((val,index)=>{
+            console.log(val)
+            arr.forEach((v,i)=>{
+                result.push([val,v,247610*val-20350,22000*v-23650*val-61600])
+                /* result1.buy.push(val);
+                result1.buy.push(v);
+                result1.push(247610*val-20350)
+                result2.push(22000*v-23650*val-61600) */
+            })
+        })
+var symbolSize = 2.5;
+    option = {
+        grid3D: {},
+        xAxis3D: {
+            type: 'category'
+        },
+        yAxis3D: {},
+        zAxis3D: {},
+        dataset: {
+            dimensions: [
+                '买入价',
+                '卖出价',
+                '行使收益',
+                '不行使收益',
+               // {name: 'Year', type: 'ordinal'}
+            ],
+            source: result
+        },
+        series: [
+            {
+                type: 'scatter3D',
+                symbolSize: symbolSize,
+                encode: {
+                    x: '买入价',
+                    y: '卖出价',
+                    z: '行使收益',
+                    tooltip: [0, 1, 2]
+                }
+            },
+             {
+                type: 'scatter3D',
+                symbolSize: symbolSize,
+                encode: {
+                    x: '买入价',
+                    y: '卖出价',
+                    z: '不行使收益',
+                    tooltip: [0, 1, 2]
+                }
+            }
+        ]
+    };
+myChart.setOption(option);
+;
+if (option && typeof option === "object") {
+    myChart.setOption(option, true);
+}
+       </script>
+   </body>
+</html>
